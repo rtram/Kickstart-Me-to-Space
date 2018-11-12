@@ -1,0 +1,9 @@
+<h2>Targeted Planet</h2>
+
+<ul>
+  <% @planets.each do |planet|%>
+  <li>
+    <%= link_to "#{planet.name} - #{planet.planet_code}", planet %>
+  </li>
+  <% end %>
+</ul>

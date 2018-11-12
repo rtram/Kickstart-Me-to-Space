@@ -1,0 +1,9 @@
+<h2>Our Brave and Qualified Space Team</h2>
+
+<ul>
+  <% @colonists.each do |colonist|%>
+  <li>
+    <%= link_to colonist.first_name + " " + colonist.last_name, colonist%>
+  </li>
+  <% end %>
+</ul>
