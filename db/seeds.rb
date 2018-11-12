@@ -13,6 +13,8 @@ jupiter = Planet.create(name: "Jupiter", planet_code: "The Moon Planet", launch_
 
 name: "Uranus", planet_code: "The Big One", launch_year: "2120", distance: 1,700,000,000, text: "Uranus One aims to establish a permanent human settlement on Mars. Several unmanned missions will be completed, establishing a habitable settlement before carefully selected and trained crews will depart to Uranus. Funding and implementing this plan will not be easy, it will be hard. The Uranus One team, with its advisers and with established aerospace companies, will evaluate and mitigate risks and identify and overcome difficulties step by step. Uranus One is a global initiative whose goal is to make this everyone’s mission to Uranus, including yours. If we all work together, we can do this. We’re going to Uranus. Come along!", funding_goal: 1,850,000,000)
 
+name: "Venus", planet_code: "The Love Planet", launch_year: "2070", distance: 162,000,000, text: "Do you want to find a place you with an abundance of healthy young single adults? Come to Venus and fulfill your desire", funding_goal: 2,850,000,000)
+
 t.string "name"
 t.string "planet_code"
 t.integer "launch_year"
