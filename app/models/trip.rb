@@ -1,4 +1,4 @@
-class ColonistPlanet < ApplicationRecord
+class Trip < ApplicationRecord
   belongs_to :colonist
   belongs_to :planet
 end

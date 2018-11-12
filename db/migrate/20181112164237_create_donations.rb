@@ -1,6 +1,6 @@
-class CreateSponsorPlanets < ActiveRecord::Migration[5.2]
+class CreateDonations < ActiveRecord::Migration[5.2]
   def change
-    create_table :sponsor_planets do |t|
+    create_table :donations do |t|
       t.integer :sponsor_id
       t.integer :planet_id
 

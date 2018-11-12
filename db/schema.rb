@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_180855) do
-
-  create_table "colonist_planets", force: :cascade do |t|
-    t.integer "colonist_id"
-    t.integer "planet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2018_11_12_204026) do
 
   create_table "colonists", force: :cascade do |t|
     t.string "first_name"
@@ -28,6 +21,14 @@ ActiveRecord::Schema.define(version: 2018_11_12_180855) do
     t.string "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.integer "sponsor_id"
+    t.integer "planet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "amount"
   end
 
   create_table "planets", force: :cascade do |t|
@@ -41,7 +42,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_180855) do
     t.integer "funding_goal"
   end
 
-  create_table "sponsers", force: :cascade do |t|
+  create_table "sponsors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.integer "net_worth"
@@ -50,8 +51,8 @@ ActiveRecord::Schema.define(version: 2018_11_12_180855) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sponsor_planets", force: :cascade do |t|
-    t.integer "sponsor_id"
+  create_table "trips", force: :cascade do |t|
+    t.integer "colonist_id"
     t.integer "planet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

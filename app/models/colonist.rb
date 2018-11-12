@@ -1,4 +1,4 @@
 class Colonist < ApplicationRecord
-  has_many :colonist_planets
-  has_many :planets, through: :colonist_planets
+  has_many :trips
+  has_many :planets, through: :trips
 end
