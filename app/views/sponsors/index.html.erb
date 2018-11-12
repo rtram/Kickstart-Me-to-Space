@@ -1,0 +1,9 @@
+<h2>Sponsors</h2>
+
+<ul>
+  <% @sponsors.each do |sponsor| %>
+    <li>
+      <%= link_to sponsor.first_name + " " + sponsor.last_name, sponsor %><br>
+    </li>
+  <% end %>
+</ul>

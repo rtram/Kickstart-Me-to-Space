@@ -9,12 +9,15 @@ class SponsorsController < ApplicationController
   end
 
   def new
+    @sponsor = Sponsor.new
   end
 
   def create
+    @sponsor = Sponsor.new(sponsor_params)
   end
 
   def edit
+    @sponsor = Sponsor.find(params[:id])
   end
 
   def update
@@ -24,5 +27,9 @@ class SponsorsController < ApplicationController
   end
 
   private
+
+  def sponsor_params
+    params.require(:sponsors).permit(:first_name, :last_name, :net_worth, :goal)
+  end
 
 end
