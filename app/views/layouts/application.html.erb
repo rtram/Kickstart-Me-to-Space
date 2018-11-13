@@ -10,6 +10,9 @@
     <%= link_to "Colonists", colonists_path(@colonists)%>
     <%= link_to "Planets", planets_path(@planets)%>
     <%= link_to "Sponsors", sponsors_path(@sponsors)%>
+    <% if session[:sponsor_id] %>
+      <%= link_to "Donation Page", new_donation_path%>
+    <% end %>
   </head>
 
   <body>

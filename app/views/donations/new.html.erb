@@ -1,0 +1,12 @@
+<br>
+<div class="error"><%= flash.notice %></div>
+
+<%= render partial: "shared/errors", locals: {new_object: @donation} %>
+
+<br><%= form_for @donation do |f| %>
+  <label> Planet: </label>
+  <%= f.collection_select :planet_id, Planet.all, :id, :name, prompt: true  %><br>
+  <%= f.label :amount %>
+  <%= f.number_field :amount, placeholder: "Enter an amount"%>
+  <%= f.submit "Submit Donation" %>
+<% end %>

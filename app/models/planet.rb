@@ -29,7 +29,7 @@ class Planet < ApplicationRecord
   end
 
   def top_ten_sponsors
-    sorted_arr = self.donations_per_donator.sort_by{|_key, value| value}
+    sorted_arr = self.donations_per_donator.sort_by!{|key, value| value}
     top_ten_arr = sorted_arr[0...10]
     #STOPPED HERE
     binding.pry

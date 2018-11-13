@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     @sponsor = Sponsor.find_by(username: params[:sponsor][:username])
     if (@sponsor && @sponsor.authenticate(params[:sponsor][:password]))
       session[:sponsor_id] = @sponsor.id
+      flash.notice.clear
       redirect_to planets_path
     else
       @sponsor = Sponsor.new
