@@ -7,6 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= link_to "Colonists", colonists_path(@colonists)%>
+    <%= link_to "Planets", planets_path(@planets)%>
+    <%= link_to "Sponsors", sponsors_path(@sponsors)%>
   </head>
 
   <body>

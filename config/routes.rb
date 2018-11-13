@@ -3,6 +3,4 @@ Rails.application.routes.draw do
   resources :planets, only: [:index, :show]
   resources :sponsors
   resources :colonists, only: [:index, :show]
-  resources :trips, only: [:index, :show]
-  resources :donations, only: [:index, :show]
 end
