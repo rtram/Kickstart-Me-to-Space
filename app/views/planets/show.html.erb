@@ -11,11 +11,9 @@
 
 <h3>Top Ten Donators</h3>
 <% @planet.top_ten_sponsors.each do |sponsor| %>
-<ul>
-  <li>
+<ol>
     <h5><%= "#{sponsor.keys[0]} - #{sponsor.values[0]}" %></h5>
-  </li>
-</ul>
+</ol>
 <% end %>
 
 <h3>How Far Are We From Our Goal</h3>

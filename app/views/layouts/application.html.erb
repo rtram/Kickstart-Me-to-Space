@@ -21,6 +21,7 @@
        <div><%= link_to "Logout", logout_path, class: "right-align", method: "DELETE"%></div>
        <% else %>
        <%= link_to "Login", login_path%>
+       <h3>Welcome Guest!</h3>
        <% end %>
     <%= yield %>
   </body>
