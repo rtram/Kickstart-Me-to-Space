@@ -1,12 +1,6 @@
 <h1>Sponsor Login</h1>
 
-<% if @sponsor.errors %>
-    <ul>
-    <% @sponsor.errors.full_messages.each do |error| %>
-        <li class="error"><%= error %></li>
-    <% end %>
-</ul>
-<% end %>
+<div class="error"><%= flash.notice %></div>
 
 <%= form_for @sponsor, url: "/login" do |f| %>
   <%= f.label :username %>

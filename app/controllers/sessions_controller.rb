@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:sponsor_id] = @sponsor.id
       redirect_to planets_path
     else
-      binding.pry
+      @sponsor = Sponsor.new
       flash.notice = "No user found with that username/password combination."
       render :new
     end
