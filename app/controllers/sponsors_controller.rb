@@ -14,6 +14,11 @@ class SponsorsController < ApplicationController
 
   def create
     @sponsor = Sponsor.new(sponsor_params)
+    if @sponsor.save
+      redirect_to sponsor_path(@sponsor)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -21,6 +26,8 @@ class SponsorsController < ApplicationController
   end
 
   def update
+    @sponsor = Sponsor.find(params[:id])
+
   end
 
   def delete
