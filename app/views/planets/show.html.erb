@@ -10,12 +10,18 @@
 <h3>$<%= @planet.funding_goal %></h3>
 
 <h3>Top Ten Donators</h3>
-<h3>PLACEHOLDER</h3>
+<% @planet.top_ten_sponsors.each do |sponsor| %>
+<ul>
+  <li>
+    <h5><%= "#{sponsor.keys[0]} - #{sponsor.values[0]}" %></h5>
+  </li>
+</ul>
+<% end %>
 
 <h3>How Far Are We From Our Goal</h3>
 <h3>$<%= @planet.funding_gap %></h3>
 
-<h3>Mission Crew Members</h3><br>
+<h3>Mission Crew Members</h3>
 <% @planet.colonists.each do |colonist| %>
   <h3><%= link_to colonist.full_name, colonist %></h3>
 <% end %>
