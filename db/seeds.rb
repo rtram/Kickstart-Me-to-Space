@@ -40,3 +40,8 @@ Donation.create(sponsor_id: paul.id, planet_id: uranus.id, amount: 1000000)
 Donation.create(sponsor_id: will.id, planet_id: jupiter.id, amount: 250000)
 Donation.create(sponsor_id: lane.id, planet_id: venus.id, amount: 850000)
 Donation.create(sponsor_id: hillary.id, planet_id: mars.id, amount: 43500000)
+
+hillary = User.create(username: "Hillary")
+paul = User.create(username: "Paul")
+mike = User.create(username: "Mike")
+jenny = User.create(username: "Jenny")
