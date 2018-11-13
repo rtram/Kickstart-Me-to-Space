@@ -3,7 +3,7 @@
 <ul>
   <% @colonists.each do |colonist|%>
   <li>
-    <%= link_to colonist.first_name + " " + colonist.last_name, colonist%>
+    <%= link_to colonist.full_name, colonist%>
   </li>
   <% end %>
 </ul>

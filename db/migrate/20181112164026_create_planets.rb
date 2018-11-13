@@ -6,7 +6,7 @@ class CreatePlanets < ActiveRecord::Migration[5.2]
       t.integer :launch_year
       t.float :distance
       t.text :description
-
+      t.integer :funding_goal
       t.timestamps
     end
   end

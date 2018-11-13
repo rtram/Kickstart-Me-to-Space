@@ -13,9 +13,9 @@
   </head>
 
   <body>
-      <% if session[:user_id]%>
-       <h3>Welcome <%= get_current_user %></h3>
-       <%= link_to "Logout", logout_path, class: "right-align", method: "DELETE"%></div>
+      <% if session[:sponsor_id]%>
+       <h3>Welcome <%= get_current_user %>!</h3>
+       <div><%= link_to "Logout", logout_path, class: "right-align", method: "DELETE"%></div>
        <% else %>
        <%= link_to "Login", login_path%>
        <% end %>

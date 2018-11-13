@@ -29,7 +29,7 @@ class SponsorsController < ApplicationController
   private
 
   def sponsor_params
-    params.require(:sponsors).permit(:first_name, :last_name, :net_worth, :goal)
+    params.require(:sponsor).permit(:username, :password, :password_confirmation, :first_name, :last_name, :net_worth, :goal)
   end
 
 end

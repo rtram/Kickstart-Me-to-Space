@@ -1,18 +1,21 @@
 <h2><%= @planet.name %></h2>
 
-<p><strong>Planet Code Name:</strong> <%= @planet.planet_code %></p>
-<p><strong>Launch Year:</strong> <%= @planet.launch_year %></p>
-<p><strong>Distance From Earth:</strong> <%= @planet.distance %></p>
-<p><strong>Description:</strong> <%= @planet.description %></p>
+<h3>Planet Code Name: <%= @planet.planet_code %></h3>
+<h3>Launch Year: <%= @planet.launch_year %></h3>
+<h3>Distance From Earth: <%= @planet.distance %></h3>
+<h3>Description:</h3>
+<p><%= @planet.description %></p><br>
 
-<p><strong>Funding Goal:</strong> <%= @planet.funding_goal %></p>
+<h3>Funding Goal</h3>
+<h3>$<%= @planet.funding_goal %></h3>
 
 <h3>Top Ten Donators</h3>
 <h3>PLACEHOLDER</h3>
 
-<p><strong>How Far Are We From Our Goal:</strong> $<%= @planet.funding_gap %></p>
+<h3>How Far Are We From Our Goal</h3>
+<h3>$<%= @planet.funding_gap %></h3>
 
-<h3>Mission Crew Members</h3>
+<h3>Mission Crew Members</h3><br>
 <% @planet.colonists.each do |colonist| %>
   <h3><%= link_to colonist.full_name, colonist %></h3>
 <% end %>

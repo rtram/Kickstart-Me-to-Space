@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_13_023617) do
+ActiveRecord::Schema.define(version: 2018_11_12_164237) do
 
   create_table "colonists", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
     t.string "codename"
@@ -26,9 +28,9 @@ ActiveRecord::Schema.define(version: 2018_11_13_023617) do
   create_table "donations", force: :cascade do |t|
     t.integer "sponsor_id"
     t.integer "planet_id"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "amount"
   end
 
   create_table "planets", force: :cascade do |t|
@@ -37,12 +39,14 @@ ActiveRecord::Schema.define(version: 2018_11_13_023617) do
     t.integer "launch_year"
     t.float "distance"
     t.text "description"
+    t.integer "funding_goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "funding_goal"
   end
 
   create_table "sponsors", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
     t.integer "net_worth"
@@ -54,12 +58,6 @@ ActiveRecord::Schema.define(version: 2018_11_13_023617) do
   create_table "trips", force: :cascade do |t|
     t.integer "colonist_id"
     t.integer "planet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
