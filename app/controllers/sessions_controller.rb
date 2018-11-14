@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:sponsor_id] = @sponsor.id
       if flash.notice
         flash.notice.clear
-      end 
+      end
       redirect_to planets_path
     else
       @sponsor = Sponsor.new
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.clear
-    redirect_to login_path
+      session.clear
+      redirect_to login_path
   end
 end
