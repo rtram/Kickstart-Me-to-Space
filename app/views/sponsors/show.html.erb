@@ -9,11 +9,7 @@
 <p>
   <%= @sponsor.goal %>
 </p>
-<<<<<<< HEAD
-=======
-
 
 <% if session[:id] == @sponsor.id && session[:type] == "sponsor" %>
   <%= link_to "Edit Profile", edit_sponsor_path(@sponsor)%>
 <% end %>
->>>>>>> 68e65c741f71588cbb94d268b793212e8964b0c2

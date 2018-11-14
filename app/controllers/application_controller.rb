@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  helper_method :get_current_user
+  helper_method
 
-  # def get_current_user
-  #   @current_user = Sponsor.find(session[:sponsor_id]).first_name
-  # end
+  def unspecified_path
+    redirect_to planets_path
+  end
 end

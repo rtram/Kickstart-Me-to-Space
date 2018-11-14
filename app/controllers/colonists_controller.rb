@@ -15,10 +15,16 @@ class ColonistsController < ApplicationController
   def create
     @colonist = Colonist.new(colonist_params)
     if @colonist.save
-      redirect_to colonist_path(@colonist)
+      session[:id] = @colonist.id
+      session[:type] = "colonist"
+      session[:first_name] = @colonist.first_name
+      redirect_to colonists_thanks_path
     else
       render :new
     end
+  end
+
+  def thanks
   end
 
   def edit

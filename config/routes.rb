@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   resources :donations, only: [:new, :create]
   resources :sponsors
   resources :colonists
+
+  get "/colonists_thanks", to: "colonists#thanks"
+  get "/sponsors_thanks", to: "sponsors#thanks"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+
+  get "*path", to: "application#unspecified_path"
 end

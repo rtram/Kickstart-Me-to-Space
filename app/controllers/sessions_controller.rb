@@ -16,8 +16,11 @@ class SessionsController < ApplicationController
           flash.notice.clear
         end
         redirect_to planets_path
+      else
+        flash.notice = "No user found with that username/password combination."
+        render :new
       end
-    else
+     else
       @user = Sponsor.find_by(username: params[:username])
       if (@user && @user.authenticate(params[:password]))
         session[:id] = @user.id
@@ -35,8 +38,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-      session.clear
-      redirect_to login_path
+    session.clear
+    redirect_to login_path
   end
 
 end

@@ -18,7 +18,7 @@ class SponsorsController < ApplicationController
       session[:id] = @sponsor.id
       session[:type] = "sponsor"
       session[:first_name] = @sponsor.first_name
-      redirect_to sponsor_path(@sponsor)
+      redirect_to sponsors_thanks_path
     else
       render :new
     end
@@ -30,7 +30,11 @@ class SponsorsController < ApplicationController
 
   def update
     @sponsor = Sponsor.find(params[:id])
-
+    if @sponsor.update(sponsor_params)
+      redirect_to sponsor_path(@sponsor)
+    else
+      render :edit
+    end
   end
 
   def destroy
