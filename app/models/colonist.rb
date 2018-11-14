@@ -20,6 +20,12 @@ class Colonist < ApplicationRecord
     self.status ||= "pending"
   end
 
+  def self.active
+    Colonist.all.select do |colonist|
+      colonist.status == "active"
+    end
+  end
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end

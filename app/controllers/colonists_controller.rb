@@ -24,11 +24,16 @@ class ColonistsController < ApplicationController
     end
   end
 
+  def status
+    @colonist = Colonist.find(params[:id])
+  end
+
   def thanks
   end
 
   def edit
     @colonist = Colonist.find(params[:id])
+    authorized_for_user(@colonist)
   end
 
   def update
@@ -41,9 +46,9 @@ class ColonistsController < ApplicationController
   end
 
   def destroy
-    Sponsor.destroy(params[:id])
+    Colonist.destroy(params[:id])
     session.clear
-    redirect_to sponsors_path
+    redirect_to colonists_path
   end
 
   private

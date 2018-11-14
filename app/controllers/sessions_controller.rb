@@ -8,32 +8,10 @@ class SessionsController < ApplicationController
   def create
     @user = Colonist.find_by(username: params[:username])
     if @user
-      if (@user && @user.authenticate(params[:password]))
-        session[:id] = @user.id
-        session[:type] = "colonist"
-        session[:first_name] = @user.first_name
-        if flash.notice
-          flash.notice.clear
-        end
-        redirect_to planets_path
-      else
-        flash.notice = "No user found with that username/password combination."
-        render :new
-      end
+      login("colonist")
      else
       @user = Sponsor.find_by(username: params[:username])
-      if (@user && @user.authenticate(params[:password]))
-        session[:id] = @user.id
-        session[:type] = "sponsor"
-        session[:first_name] = @user.first_name
-        if flash.notice
-          flash.notice.clear
-        end
-        redirect_to planets_path
-      else
-        flash.notice = "No user found with that username/password combination."
-        render :new
-      end
+      login("sponsor")
     end
   end
 

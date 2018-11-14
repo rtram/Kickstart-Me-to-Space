@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :sponsors
   resources :colonists
 
+  get "/colonists_status/:id", to: "colonists#status"
   get "/colonists_thanks", to: "colonists#thanks"
   get "/sponsors_thanks", to: "sponsors#thanks"
   get "/login", to: "sessions#new"

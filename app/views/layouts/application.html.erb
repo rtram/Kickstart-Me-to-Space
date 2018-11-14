@@ -23,6 +23,9 @@
     <% if session[:id] && session[:type] == "colonist"%>
       <%= link_to "My Profile", colonist_path(Colonist.find(session[:id]))%>
     <% end %>
+    <% if session[:type] == "colonist"%>
+     <%= link_to "Application Status", "/colonists_status/#{session[:id]}"%>
+    <% end %>
 </div>
   </head>
 

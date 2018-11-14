@@ -9,7 +9,7 @@
 <div id="ColonistIndex">
   <br>
 <ul>
-  <% @colonists.each do |colonist|%>
+  <% Colonist.active.each do |colonist|%>
   <li>
     <%= link_to colonist.full_name, colonist%>
   </li>
