@@ -10,6 +10,7 @@
   <%= @sponsor.goal %>
 </p>
 
-<% if session[:id]  == @sponsor.id%>
+
+<% if session[:id] == @sponsor.id && session[:type] == "sponsor" %>
   <%= link_to "Edit Profile", edit_sponsor_path(@sponsor)%>
 <% end %>

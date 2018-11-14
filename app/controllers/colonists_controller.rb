@@ -35,6 +35,9 @@ class ColonistsController < ApplicationController
   end
 
   def destroy
+    Sponsor.destroy(params[:id])
+    session.clear
+    redirect_to sponsors_path
   end
 
   private

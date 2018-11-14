@@ -13,6 +13,13 @@ class Colonist < ApplicationRecord
 
   has_secure_password
 
+  after_initialize :set_defaults
+  # The set_defaults will only work if the object is new
+
+  def set_defaults
+    self.status ||= "pending"
+  end
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end

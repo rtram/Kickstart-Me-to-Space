@@ -14,3 +14,8 @@
   </li>
   <% end %>
 </ul>
+
+
+<% if session[:id]  == @colonist.id && session[:type] == "colonist" %>
+  <%= link_to "Edit Profile", edit_colonist_path(@colonist)%>
+<% end %>
