@@ -2,22 +2,22 @@
 
 <h3>Planet Code Name: <%= @planet.planet_code %></h3>
 <h3>Launch Year: <%= @planet.launch_year %></h3>
-<h3>Distance From Earth: <%= @planet.distance %></h3>
+<h3>Distance From Earth: <%= number_with_delimiter(@planet.distance, :delimiter => ',') %></h3>
 <h3>Description:</h3>
 <p><%= @planet.description %></p><br>
 
 <h3>Funding Goal</h3>
-<h4>$<%= @planet.funding_goal %></h4>
+<h4>$<%= number_with_delimiter(@planet.funding_goal, :delimiter => ',') %></h4>
 
 <h3>Top Ten Donators</h3>
-<% @planet.top_ten_sponsors.each do |sponsor| %>
+<% @planet.top_ten_sponsors.each_with_index do |sponsor,index| %>
 <ol>
-    <h5><%= "#{sponsor.keys[0]} - #{sponsor.values[0]}" %></h5>
+    <h5><%= "#{index + 1}. #{sponsor.keys[0]} - #{number_with_delimiter(sponsor.values[0], :delimiter => ',')}" %></h5>
 </ol>
 <% end %>
 
 <h3>How Far Are We From Our Goal</h3>
-<h3>$<%= @planet.funding_gap %></h3>
+<h3>$<%= number_with_delimiter(@planet.funding_gap, :delimiter => ',') %></h3>
 <% if session[:sponsor_id] %>
   <%= link_to "Donate", new_donation_path%>
 <% end %>
