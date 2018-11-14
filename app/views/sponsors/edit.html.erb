@@ -1,15 +1,3 @@
 <%= render partial: "shared/errors", locals: {new_object: @sponsor} %>
 
-<%= form_for(@sponsor) do |f| %>
-
-  <%= f.label :first_name %><br>
-  <%= f.text_field :first_name %><br>
-  <%= f.label :last_name %><br>
-  <%= f.text_field :last_name %><br>
-  <%= f.label :net_worth %><br>
-  <%= f.number_field :net_worth%><br>
-  <%= f.label :goal %><br>
-  <%= f.text_area :goal %><br>
-
-  <%= f.submit %>
-<% end %>
+<%= render partial: "shared/errors", locals: {new_object: @sponsor} %>

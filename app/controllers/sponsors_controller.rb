@@ -30,7 +30,7 @@ class SponsorsController < ApplicationController
 
   end
 
-  def delete
+  def destroy
   end
 
   private
