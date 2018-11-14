@@ -4,5 +4,4 @@ class ApplicationController < ActionController::Base
   # def get_current_user
   #   @current_user = Sponsor.find(session[:sponsor_id]).first_name
   # end
-
 end
