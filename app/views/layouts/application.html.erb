@@ -11,11 +11,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= link_to "Colonists", colonists_path(@colonists)%>
-    <%= link_to "Planets", planets_path(@planets)%>
-    <%= link_to "Sponsors", sponsors_path(@sponsors)%>
-    <% if session[:sponsor_id] %>
+    <%= link_to "Colonists", colonists_path%>
+    <%= link_to "Planets", planets_path%>
+    <%= link_to "Sponsors", sponsors_path%>
+    <% if session[:id] && session[:type] == "sponsor"%>
       <%= link_to "Donation Page", new_donation_path%>
+    <% end %>
+    <% if session[:id] && session[:type] == "sponsor"%>
+      <%= link_to "My Profile", sponsor_path(Sponsor.find(session[:id]))%>
+    <% end %>
+    <% if session[:id] && session[:type] == "colonist"%>
+      <%= link_to "My Profile", colonist_path(Colonist.find(session[:id]))%>
     <% end %>
 </div>
   </head>
@@ -23,8 +29,8 @@
 <div id="LoginLook">
 
   <body>
-      <% if session[:sponsor_id]%>
-       <h3><%= get_current_user %></h3>
+      <% if session[:id]%>
+       <h3><%= session[:first_name] %></h3>
        <div><%= link_to "Logout", logout_path, class: "right-align", method: "DELETE"%></div>
        <% else %>
        <%= link_to "Login", login_path%>

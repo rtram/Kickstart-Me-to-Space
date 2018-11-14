@@ -1,11 +1,11 @@
 <br><br><br><br>
 <div id="loginpath">
-  <h1>Sponsor Login</h1>
+  <h1>Login</h1>
 <div class="error"><%= flash.notice %></div>
 
-<%= form_for @sponsor, url: "/login" do |f| %>
-  <%= f.text_field :username, placeholder: "Username" %><br>
-  <%= f.password_field :password, placeholder: "Password"%><br>
-  <%= f.submit "Login" %>
+<%= form_tag url: "/login" do %>
+  <%= text_field_tag :username, nil, placeholder: "Username" %><br>
+  <%= password_field_tag :password, nil, placeholder: "Password" %><br>
+  <%= submit_tag "Login" %>
 <% end %>
-<div>
+</div>

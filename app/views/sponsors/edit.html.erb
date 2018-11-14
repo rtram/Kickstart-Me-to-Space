@@ -1,3 +1,7 @@
 <%= render partial: "shared/errors", locals: {new_object: @sponsor} %>
 
-<%= render partial: "shared/errors", locals: {new_object: @sponsor} %>
+<%= render partial: "form", locals: {new_object: @sponsor} %> <br>
+
+<%= form_tag @sponsor, method: "Delete" do %>
+    <%= submit_tag "Delete Account" %>
+<%end%>
