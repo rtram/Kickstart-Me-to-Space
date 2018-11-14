@@ -15,6 +15,9 @@ class SponsorsController < ApplicationController
   def create
     @sponsor = Sponsor.new(sponsor_params)
     if @sponsor.save
+      session[:id] = @sponsor.id
+      session[:type] = "sponsor"
+      session[:first_name] = @sponsor.first_name
       redirect_to sponsor_path(@sponsor)
     else
       render :new
@@ -31,6 +34,9 @@ class SponsorsController < ApplicationController
   end
 
   def destroy
+    Sponsor.destroy(params[:id])
+    session.clear
+    redirect_to sponsors_path
   end
 
   private

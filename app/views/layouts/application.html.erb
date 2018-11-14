@@ -11,11 +11,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= link_to "Colonists", colonists_path(@colonists)%>
-    <%= link_to "Planets", planets_path(@planets)%>
-    <%= link_to "Sponsors", sponsors_path(@sponsors)%>
+    <%= link_to "Colonists", colonists_path%>
+    <%= link_to "Planets", planets_path%>
+    <%= link_to "Sponsors", sponsors_path%>
     <% if session[:id] && session[:type] == "sponsor"%>
       <%= link_to "Donation Page", new_donation_path%>
+    <% end %>
+    <% if session[:id] && session[:type] == "sponsor"%>
+      <%= link_to "My Profile", sponsor_path(Sponsor.find(session[:id]))%>
+    <% end %>
+    <% if session[:id] && session[:type] == "colonist"%>
+      <%= link_to "My Profile", sponsor_path(Colonist.find(session[:id]))%>
     <% end %>
 </div>
   </head>
