@@ -9,13 +9,3 @@
 <p>
   <%= @sponsor.goal %>
 </p>
-
-<% if session[:sponsor_id]  == @sponsor.id%>
-  <%= link_to "Edit Profile", edit_sponsor_path(@sponsor)%>
-<% end %>
-
-<% if session[:sponsor_id]  == @sponsor.id%>
-<%= form_tag @sponsor, method: "Delete" do %>
-    <%= submit_tag "Delete Account" %>
-  <%end%>
-<%end%>
