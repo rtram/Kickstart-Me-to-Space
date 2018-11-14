@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <title>SpaceX</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+<div id="topbar">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,16 +17,20 @@
     <% if session[:sponsor_id] %>
       <%= link_to "Donation Page", new_donation_path%>
     <% end %>
+</div>
   </head>
+
+<div id="LoginLook">
 
   <body>
       <% if session[:sponsor_id]%>
-       <h3>Welcome <%= get_current_user %>!</h3>
+       <h3><%= get_current_user %></h3>
        <div><%= link_to "Logout", logout_path, class: "right-align", method: "DELETE"%></div>
        <% else %>
        <%= link_to "Login", login_path%>
-       <h3>Welcome Guest!</h3>
+       <h3>Guest</h3>
        <% end %>
     <%= yield %>
   </body>
+</div>
 </html>
