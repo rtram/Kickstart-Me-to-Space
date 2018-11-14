@@ -1,0 +1,29 @@
+<%= form_for(new_object) do |f| %>
+
+<%= f.label :username %><br>
+<%= f.text_field :username %><br>
+<%= f.label :password %><br>
+<%= f.password_field :password %><br>
+Confirm Your Password<br>
+<%= f.password_field :password_confirmation %><br>
+<%= f.label :first_name %><br>
+<%= f.text_field :first_name %><br>
+<%= f.label :last_name %><br>
+<%= f.text_field :last_name %><br>
+<%= f.label :codename %><br>
+<%= f.text_field :codename %><br>
+<%= f.label :age %><br>
+<%= f.number_field :age %><br>
+<%= f.label :profession %><br>
+<%= f.text_field :profession %><br>
+<%= f.label :gender %><br>
+<select name="colonist[gender]">
+  <option value="">Please select</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+</select>
+<br>
+<br>
+
+  <%= f.submit %>
+<% end %>

@@ -7,13 +7,13 @@ uranus = Planet.create(name: "Uranus", planet_code: "The Big One", launch_year: 
 
 venus = Planet.create(name: "Venus", planet_code: "The Love Planet", launch_year: 2070, distance: 162000000, description: "Do you want to find a place you with an abundance of healthy young single adults? Come to Venus and fulfill your desire", funding_goal: 2850000000)
 
-mike = Colonist.create(username: "mikekim", first_name:"Michael", last_name:"Kim", codename:"Would You Rather?", age: 27, profession:"Unemployed Wild Child", gender:"Male", password:"mike")
+mike = Colonist.create(username: "mikekim", first_name:"Michael", last_name:"Kim", codename:"Would You Rather?", age: 27, profession:"Unemployed Wild Child", gender:"Male", password:"mike", status:"active")
 
-ana = Colonist.create(username:"anaharris",first_name:"Ana", last_name:"Harris", codename:"BanAna", age: 28, profession:"Whiteboard Professional", gender:"Female", password:"ana")
+ana = Colonist.create(username:"anaharris",first_name:"Ana", last_name:"Harris", codename:"BanAna", age: 28, profession:"Whiteboard Professional", gender:"Female", password:"ana", status:"active")
 
-anna = Colonist.create(username:"annaconaway", first_name:"Anna", last_name:"Conaway", codename:"Anna MontAnna", age: 28, profession:"Life Sommelierre", gender:"Female", password:"anna")
+anna = Colonist.create(username:"annaconaway", first_name:"Anna", last_name:"Conaway", codename:"Anna MontAnna", age: 28, profession:"Life Sommelierre", gender:"Female", password:"anna", status:"active")
 
-jason = Colonist.create(username:"jasoncampbell", first_name:"Jason", last_name:"Campbell", codename:"Jason Space Station", age:32, profession:"Floater", gender:"Male", password:"jason")
+jason = Colonist.create(username:"jasoncampbell", first_name:"Jason", last_name:"Campbell", codename:"Jason Space Station", age:32, profession:"Floater", gender:"Male", password:"jason", status:"active")
 
 paul = Sponsor.create(username:"paulnicholsen", first_name:"Paul", last_name:"Nicholsen", net_worth: 3150000, goal:"Intergalactic Domination of Steven Universe.", password:"paul")
 

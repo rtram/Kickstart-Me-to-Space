@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :planets, only: [:index, :show]
   resources :donations, only: [:new, :create]
   resources :sponsors
-  resources :colonists, only: [:index, :show]
+  resources :colonists
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
