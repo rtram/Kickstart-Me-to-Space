@@ -6,15 +6,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-    @sponsor = Sponsor.find_by(username: params[:sponsor][:username])
-    if (@sponsor && @sponsor.authenticate(params[:sponsor][:password]))
-      session[:sponsor_id] = @sponsor.id
-      if flash.notice
-        flash.notice.clear
-      end
-      redirect_to planets_path
-=======
     @user = Colonist.find_by(username: params[:username])
     if @user
       if (@user && @user.authenticate(params[:password]))
@@ -26,7 +17,6 @@ class SessionsController < ApplicationController
         end
         redirect_to planets_path
       end
->>>>>>> 68e65c741f71588cbb94d268b793212e8964b0c2
     else
       @user = Sponsor.find_by(username: params[:username])
       if (@user && @user.authenticate(params[:password]))
@@ -49,8 +39,4 @@ class SessionsController < ApplicationController
       redirect_to login_path
   end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 68e65c741f71588cbb94d268b793212e8964b0c2
 end
