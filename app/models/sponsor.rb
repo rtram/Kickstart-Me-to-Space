@@ -58,4 +58,23 @@ class Sponsor < ApplicationRecord
   def donation_history
     self.donations.collect {|donation| {donation.created_at => donation.amount} }
   end
+
+  def self.donation_frequency_array
+    self.all.collect do |sponsor|
+      {sponsor.full_name => sponsor.donations.length}
+    end
+  end
+
+  def self.sorted_donations_frequency_arr
+    self.donation_frequency_array.sort! { |a, b| a.values[0] <=> b.values[0] }
+  end
+
+  def self.most_frequent_sponsor
+    self.sorted_donations_frequency_arr.last
+  end
+
+  def self.least_frequent_sponsor
+    self.sorted_donations_frequency_arr.first
+  end
+
 end

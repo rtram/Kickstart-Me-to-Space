@@ -17,6 +17,8 @@
 
 
 <h3>Donation History</h3>
+<ul>
 <% @donation_history.each do |donation|%>
-  <%= "#{donation.keys[0].strftime("%Y, %B %d")} - $#{number_with_delimiter(donation.values[0], :delimiter => ',')}"%>
+  <li><%= "#{donation.keys[0].strftime("%Y, %B %d")} - $#{number_with_delimiter(donation.values[0], :delimiter => ',')}"%></li>
+<ul>
 <% end %>

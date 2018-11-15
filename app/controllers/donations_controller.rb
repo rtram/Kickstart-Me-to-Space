@@ -5,6 +5,8 @@ class DonationsController < ApplicationController
     @most_stingy = Sponsor.stingiest
     @richest_sponsor = Sponsor.richest_sponsor
     @poorest_sponsor = Sponsor.poorest_sponsor
+    @most_frequent_sponsor = Sponsor.most_frequent_sponsor
+    @least_frequent_sponsor = Sponsor.least_frequent_sponsor
   end
 
   def new
