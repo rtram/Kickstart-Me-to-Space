@@ -1,5 +1,12 @@
 class DonationsController < ApplicationController
 
+  def index
+    @top_ten_sponsors = Sponsor.top_ten_overall
+    @most_stingy = Sponsor.stingiest
+    @richest_sponsor = Sponsor.richest_sponsor
+    @poorest_sponsor = Sponsor.poorest_sponsor
+  end
+
   def new
     @donation = Donation.new
   end

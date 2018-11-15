@@ -37,11 +37,11 @@ class Sponsor < ApplicationRecord
   end
 
 #Top Ten Most Stingy Stat-------------------------------------------------------
-  def self.bottom_ten_overall
-    self.sorted_donations_sum_arr[0..9]
+  def self.stingiest
+    self.sorted_donations_sum_arr.first
   end
 
-#Net Worth Stats----------------------------------------------------------
+#Net Worth Stats----------------------------------------------------------------
   def self.net_worth_arr
     self.all.sort_by {|sponsor| sponsor[:net_worth]}
   end
@@ -54,4 +54,8 @@ class Sponsor < ApplicationRecord
     self.net_worth_arr.first
   end
 
+#Sponsor Donation History-------------------------------------------------------
+  def donation_history
+    self.donations.collect {|donation| {donation.created_at => donation.amount} }
+  end
 end

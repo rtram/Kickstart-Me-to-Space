@@ -1,0 +1,15 @@
+<h1>Top Ten Most Generous Sponsors</h1>
+<ul>
+<% @top_ten_sponsors.each do |sponsor|%>
+<li><%= "#{sponsor.keys[0]} #{number_with_delimiter(sponsor.values[0], :delimiter => ',')}" %></li>
+</ul>
+<% end %>
+
+<h1>Most Stingy Sponsor</h1>
+<%= "#{Sponsor.stingiest.keys[0]} #{number_with_delimiter(Sponsor.stingiest.values[0], :delimiter => ',')}" %></li>
+
+<h1>Richest Sponsor</h1>
+<%= "#{@richest_sponsor.full_name} #{number_with_delimiter(@richest_sponsor[:net_worth], :delimiter => ',')}" %></li>
+
+<h1>Poorest Sponsor</h1>
+<%= "#{@poorest_sponsor.full_name} #{number_with_delimiter(@poorest_sponsor[:net_worth], :delimiter => ',')}" %></li>

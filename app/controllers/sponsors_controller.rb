@@ -6,6 +6,7 @@ class SponsorsController < ApplicationController
 
   def show
     @sponsor = Sponsor.find(params[:id])
+    @donation_history = @sponsor.donation_history
   end
 
   def new

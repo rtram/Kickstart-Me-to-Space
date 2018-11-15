@@ -4,6 +4,7 @@
 <%= render partial: "shared/errors", locals: {new_object: @donation} %>
 
 <div id="donation">
+  <h1>Donation</h1>
 <br><%= form_for @donation do |f| %>
   <label> Planet: </label>
   <%= f.collection_select :planet_id, Planet.all, :id, :name, prompt: true  %><br>

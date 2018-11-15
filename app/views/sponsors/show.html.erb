@@ -1,7 +1,7 @@
 <h2><%= @sponsor.full_name %></h2>
 
 <h3>
-  Net Worth: $<%= @sponsor.net_worth %>
+  Net Worth: $<%= number_with_delimiter(@sponsor.net_worth, :delimiter => ',') %>
 </h3>
 
 <br>
@@ -10,6 +10,13 @@
   <%= @sponsor.goal %>
 </p>
 
+
 <% if session[:id] == @sponsor.id && session[:type] == "sponsor" %>
   <%= link_to "Edit Profile", edit_sponsor_path(@sponsor)%>
+<% end %>
+
+
+<h3>Donation History</h3>
+<% @donation_history.each do |donation|%>
+  <%= "#{donation.keys[0].strftime("%Y, %B %d")} - $#{number_with_delimiter(donation.values[0], :delimiter => ',')}"%>
 <% end %>

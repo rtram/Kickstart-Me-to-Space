@@ -14,6 +14,7 @@
     <button class="t1"><%= link_to "Colonists", colonists_path%></button>
     <button class="t2"><%= link_to "Planets", planets_path%></button>
     <button class="t3"><%= link_to "Sponsors", sponsors_path%></button>
+    <button class="t8"><%= link_to "Donation Ranking", donations_path%></button>
     <% if session[:id] && session[:type] == "sponsor"%>
       <button class="t4"><%= link_to "Donation Page", new_donation_path%></button>
     <% end %>
