@@ -1,8 +1,8 @@
-<br></br><br></br><br></br>
-<div class="AllCol">
+
+
 <div id="TitleColonistIndex">
 
-<h1>Our Brave and Qualified Space Team</h1>
+<h1>Our Brave and <br><br/> Qualified Space Team</h1>
 </div>
 
 
@@ -11,9 +11,10 @@
 <ul>
   <% Colonist.active.each do |colonist|%>
   <li>
-    <%= link_to colonist.full_name, colonist%>
+    <button class="a"><%= link_to colonist.full_name, colonist%></button>
   </li>
   <% end %>
 </ul>
 
 <%= link_to "Apply", new_colonist_path %>
+</div>

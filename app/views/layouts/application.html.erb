@@ -7,39 +7,38 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-<div id="topbar">
+<div class="topbar">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= link_to "Colonists", colonists_path%>
-    <%= link_to "Planets", planets_path%>
-    <%= link_to "Sponsors", sponsors_path%>
+    <button class="t1"><%= link_to "Colonists", colonists_path%></button>
+    <button class="t2"><%= link_to "Planets", planets_path%></button>
+    <button class="t3"><%= link_to "Sponsors", sponsors_path%></button>
     <% if session[:id] && session[:type] == "sponsor"%>
-      <%= link_to "Donation Page", new_donation_path%>
+      <button class="t4"><%= link_to "Donation Page", new_donation_path%></button>
     <% end %>
     <% if session[:id] && session[:type] == "sponsor"%>
-      <%= link_to "My Profile", sponsor_path(Sponsor.find(session[:id]))%>
+      <button class="t5"><%= link_to "My Profile", sponsor_path(Sponsor.find(session[:id]))%></button>
     <% end %>
     <% if session[:id] && session[:type] == "colonist"%>
-      <%= link_to "My Profile", colonist_path(Colonist.find(session[:id]))%>
+      <button class="t6"><%= link_to "My Profile", colonist_path(Colonist.find(session[:id]))%></button>
     <% end %>
     <% if session[:type] == "colonist"%>
-     <%= link_to "Application Status", "/colonists_status/#{session[:id]}"%>
+     <button class="t7"><%= link_to "Application Status", "/colonists_status/#{session[:id]}"%></button>
     <% end %>
 </div>
   </head>
 
-<div id="LoginLook">
+
 
   <body>
       <% if session[:id]%>
-       <h3><%= session[:first_name] %></h3>
-       <div><%= link_to "Logout", logout_path, class: "right-align", method: "DELETE"%></div>
+      <div class= "username"><h3><%= session[:first_name] %></h3></div>
+       <div id="logout"><%= link_to "Logout", logout_path, method: "DELETE"%></div>
        <% else %>
        <%= link_to "Login", login_path%>
        <h3>Guest</h3>
        <% end %>
     <%= yield %>
   </body>
-</div>
 </html>
