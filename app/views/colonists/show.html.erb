@@ -1,6 +1,6 @@
 
 <div class="colonistinfo">
-<h2><%= @colonist.full_name %></h2>
+<h1><%= @colonist.full_name %></h1>
 <h3>Profile and Qualifications</h3>
 
 <p><strong>Code Name:</strong> <%= @colonist.codename %></p>
@@ -9,17 +9,19 @@
 <p><strong>Professional Qualifications:</strong> <%= @colonist.profession %></p>
 
 <h2>Missions Scheduled</h2>
-<ul>
+<ul style="
+    clear: both;
+    padding: 29px;">
   <% @colonist.planets.each do |planet|%>
   <li>
-    <%= link_to "Mission: '#{planet.planet_code}' to #{planet.name} -  #{planet.launch_year}", planet %>
+    <%= link_to "Mission: '#{planet.planet_code}' to #{planet.name} -  #{planet.launch_year}", planet, class: "mission" %>
   </li>
   <% end %>
 </ul>
 
 
 <% if session[:id]  == @colonist.id && session[:type] == "colonist" %>
-  <%= link_to "Edit Profile", edit_colonist_path(@colonist)%>
+  <%= link_to "Edit Profile", edit_colonist_path(@colonist), class: "editprofile"%>
 <% end %>
 
-<div>
+</div>

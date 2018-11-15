@@ -1,4 +1,5 @@
 
+<br><br/>
 <div id="TitlePlanetIndex">
 
 <h1>Sponsor</h1>
@@ -9,12 +10,10 @@
 <ul>
   <% @sponsors.each do |sponsor| %>
     <li>
-      <%= link_to sponsor.first_name + " " + sponsor.last_name, sponsor %><br>
+      <%= link_to sponsor.first_name + " " + sponsor.last_name, sponsor, class: "c" %><br>
     </li>
   <% end %>
 </ul>
-</div>
 
-<div id="BecomeSponser">
 <%= link_to "Become a Sponsor", new_sponsor_path %>
 </div>

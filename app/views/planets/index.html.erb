@@ -1,3 +1,4 @@
+<br><br/>
 <div id="TitlePlanetIndex">
 
 <h1>Planet Projects</h1>
@@ -8,7 +9,7 @@
 <ul>
   <% @planets.each do |planet|%>
   <li>
-  <%= link_to "#{planet.name} - #{planet.planet_code}", planet %>
+  <%= link_to "#{planet.name} - #{planet.planet_code}", planet, class: "b" %>
   </li>
   <% end %>
 </ul>

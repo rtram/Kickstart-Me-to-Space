@@ -1,5 +1,5 @@
-<h2><%= @sponsor.full_name %></h2>
-
+<div class="sponsorshow">
+<h1><%= @sponsor.full_name %></h1>
 <h3>
   Net Worth: $<%= number_with_delimiter(@sponsor.net_worth, :delimiter => ',') %>
 </h3>
@@ -22,3 +22,4 @@
   <li><%= "#{donation.keys[0].strftime("%Y, %B %d")} - $#{number_with_delimiter(donation.values[0], :delimiter => ',')}"%></li>
 <ul>
 <% end %>
+</div>

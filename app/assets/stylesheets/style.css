@@ -30,9 +30,10 @@ h1, h2, h3, h4, h5, h6, label {
 
 #PlanetIndex li {
   font-weight: 100;
-  letter-spacing: 1.5px;
-  padding: 10px;
-  font-size: 13px;
+  font-size: 17px;
+  padding: 18px;
+  text-decoration: none;
+  color: white;
 }
 
 #PlanetIndex a:hover {
@@ -55,20 +56,20 @@ h1, h2, h3, h4, h5, h6, label {
 #ColonistIndex li {
   font-weight: 100;
   font-size: 17px;
-  padding: 10px;
+  padding: 18px;
   text-decoration: none;
   color: white;
 }
 
-.a{
+.a, .b, .c{
 background-color: #2C042C;
 border: 3px solid #793E5B;
 color: white;
+font-size: 14px;
 padding: 7px 32px;
 border-radius: 25px;
-margin: -2px 00px;
+margin: 2px 00px;
 }
-
 
 
 #TitleColonistIndex{
@@ -76,8 +77,17 @@ margin: -2px 00px;
 }
 
 
+.colonistinfo ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+    list-style-type: none;
+}
 
-
+.colonistinfo li{
+  text-decoration: none;
+    list-style-type: none;
+}
 
 .colonistinfo{
   background-color: #2d042d;
@@ -88,11 +98,55 @@ margin: -2px 00px;
 }
 
 .planetshow {
-  background-color: rgba(#2d042d, 0.83);
+  background-color: #2d042d;
   padding: 50px;
   border: 3px solid #793E5B;
   border-radius: 25px;
   margin: 50px 400px;
+}
+
+.sponsorshow {
+  background-color: #2d042d;
+  padding: 50px;
+  border: 3px solid #793E5B;
+  border-radius: 25px;
+  margin: 50px 400px;
+}
+
+.sponsorshow ul{
+  margin: 0;
+  padding: 0;
+    text-align: center;
+    list-style-type: none;
+}
+
+.sponsorshow li{
+  text-align: center;
+  list-style-type: none;
+}
+
+.donation_history {
+   text-align: center;
+}
+
+.donationindex {
+  background-color: #2d042d;
+  padding: 50px;
+  border: 3px solid #793E5B;
+  border-radius: 25px;
+  margin: 50px 400px;
+}
+
+.donationindex ul{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+}
+
+.donationindex li{
+  text-align: center;
+  list-style-type: none;
 }
 
 .t1, a:visited, a:link, a:active
@@ -101,15 +155,55 @@ margin: -2px 00px;
     color: white;
 }
 
-.t1 a:hover , .t2 a:hover , .t3 a:hover , .t4 a:hover , .t5 a:hover , .t6 a:hover , .t7 a:hover {
+.t1 a:hover , .t2 a:hover , .t3 a:hover , .t4 a:hover , .t5 a:hover , .t6 a:hover , .t7 a:hover , .t8 a:hover {
   color: rgb(255, 199, 0);
 }
 
-.t1, .t2, .t3, .t4, .t5, .t6, .t7 {
+.t1, .t2, .t3, .t4, .t5, .t6, .t7, .t8 {
   border: 2px solid #793E5B;
   background-color: #2C042C;
   border-radius: 10px;
   text-decoration: none;
+}
+
+.editprofile, a:visited, a:link, a:active
+{
+    text-decoration: none!important;
+    color: white;
+}
+
+.editprofile a:hover {
+  color: rgb(255, 199, 0);
+}
+
+.editprofile {
+  background-color: #2C042C;
+  border: 3px solid #793E5B;
+  color: white;
+  font-size: 14px;
+  padding: 7px 32px;
+  border-radius: 25px;
+  margin: 2px 00px;
+}
+
+
+.colonistprofile, .mission, a:hover {
+  color: rgb(255, 199, 0);
+}
+
+.colonistprofile, .mission, a:visited, a:link, a:active
+{
+    text-decoration: none!important;
+    color: white;
+}
+.colonistprofile, .mission {
+  background-color: #2C042C;
+  border: 3px solid #793E5B;
+  color: white;
+  font-size: 14px;
+  padding: 7px 32px;
+  border-radius: 25px;
+  margin: 2px 00px;
 }
 
 .logout{

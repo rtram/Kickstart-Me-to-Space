@@ -1,3 +1,4 @@
+<div class="donationindex">
 <h1>Top Ten Most Generous Sponsors</h1>
 <ul>
 <% @top_ten_sponsors.each do |sponsor|%>
@@ -19,3 +20,4 @@
 <br>
 <h1>Least Frequent Sponsor</h1>
 <%= "#{@least_frequent_sponsor.keys[0]} #{number_with_delimiter(@least_frequent_sponsor[:net_worth], :delimiter => ',')}" %></li>
+</div>

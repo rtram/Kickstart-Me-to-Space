@@ -1,6 +1,5 @@
-<h2><%= @planet.name %></h2>
-
 <div class="planetshow">
+<h1><%= @planet.name %></h1><br>
 <h3>Planet Code Name: <%= @planet.planet_code %></h3>
 <h3>Launch Year: <%= @planet.launch_year %></h3>
 <h3>Distance From Earth: <%= number_with_delimiter(@planet.distance, :delimiter => ',') %></h3>
@@ -25,6 +24,6 @@
 
 <h3>Mission Crew Members</h3>
 <% @planet.colonists.each do |colonist| %>
-  <h3><%= link_to colonist.full_name, colonist %></h3>
+  <h3><%= link_to colonist.full_name, colonist, class: "colonistprofile" %></h3>
 <% end %>
 </div>
