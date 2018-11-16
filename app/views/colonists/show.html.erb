@@ -23,5 +23,6 @@
 <% if session[:id]  == @colonist.id && session[:type] == "colonist" %>
   <%= link_to "Edit Profile", edit_colonist_path(@colonist), class: "editprofile"%>
 <% end %>
-
+<br><br>
+<%= link_to "Go Back to Colonist List", colonists_path, class: "colonistprofile"%>
 </div>

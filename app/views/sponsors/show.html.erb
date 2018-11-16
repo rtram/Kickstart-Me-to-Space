@@ -10,16 +10,16 @@
   <%= @sponsor.goal %>
 </p>
 
-
-<% if session[:id] == @sponsor.id && session[:type] == "sponsor" %>
-  <%= link_to "Edit Profile", edit_sponsor_path(@sponsor)%>
-<% end %>
-
-
 <h3>Donation History</h3>
 <ul>
 <% @donation_history.each do |donation|%>
   <li><%= "#{donation.keys[0].strftime("%Y, %B %d")} - $#{number_with_delimiter(donation.values[0], :delimiter => ',')}"%></li>
 <ul>
 <% end %>
+<br>
+<% if session[:id] == @sponsor.id && session[:type] == "sponsor" %>
+  <%= link_to "Edit Profile", edit_sponsor_path(@sponsor), class: "editprofile"%>
+<% end %>
+<br><br>
+<%= link_to "Go Back to Sponsor List", sponsors_path, class: "colonistprofile"%>
 </div>

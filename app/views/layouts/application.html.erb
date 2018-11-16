@@ -11,21 +11,21 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <button class="t1"><%= link_to "Colonists", colonists_path%></button>
-    <button class="t2"><%= link_to "Planets", planets_path%></button>
-    <button class="t3"><%= link_to "Sponsors", sponsors_path%></button>
-    <button class="t8"><%= link_to "Donation Ranking", donations_path%></button>
+    <%= link_to "Colonists", colonists_path, class: "topbutton"%>
+    <%= link_to "Planets", planets_path, class: "topbutton"%>
+    <%= link_to "Sponsors", sponsors_path, class: "topbutton"%>
+    <%= link_to "Donation Ranking", donations_path, class: "topbutton"%>
     <% if session[:id] && session[:type] == "sponsor"%>
-      <button class="t4"><%= link_to "Donation Page", new_donation_path%></button>
+      <%= link_to "Donation Page", new_donation_path, class: "topbutton"%>
     <% end %>
     <% if session[:id] && session[:type] == "sponsor"%>
-      <button class="t5"><%= link_to "My Profile", sponsor_path(Sponsor.find(session[:id]))%></button>
+      <%= link_to "My Profile", sponsor_path(Sponsor.find(session[:id])), class: "topbutton"%>
     <% end %>
     <% if session[:id] && session[:type] == "colonist"%>
-      <button class="t6"><%= link_to "My Profile", colonist_path(Colonist.find(session[:id]))%></button>
+      <%= link_to "My Profile", colonist_path(Colonist.find(session[:id])), class: "topbutton"%>
     <% end %>
     <% if session[:type] == "colonist"%>
-     <button class="t7"><%= link_to "Application Status", "/colonists_status/#{session[:id]}"%></button>
+     <%= link_to "Application Status", "/colonists_status/#{session[:id]}", class: "topbutton"%>
     <% end %>
 </div>
   </head>
@@ -35,10 +35,10 @@
   <body>
       <% if session[:id]%>
       <div class= "username"><h3><%= session[:first_name] %></h3></div>
-       <div class="logout"><%= link_to "Logout", logout_path, method: "DELETE"%></div>
+      <%= link_to "Logout", logout_path, method: "DELETE", class: "logout"%>
        <% else %>
        <%= link_to "Login", login_path%>
-       <h3>Guest</h3>
+       <h3>Please Sign In</h3>
        <% end %>
     <%= yield %>
   </body>

@@ -71,7 +71,6 @@ border-radius: 25px;
 margin: 2px 00px;
 }
 
-
 #TitleColonistIndex{
   text-align: center;
 }
@@ -149,22 +148,41 @@ margin: 2px 00px;
   list-style-type: none;
 }
 
-.t1, a:visited, a:link, a:active
+/* .c, a:visited, a:link, a:active
 {
     text-decoration: none!important;
     color: white;
+} */
+
+.topbutton{
+background-color: #2C042C;
+border: 3px solid #793E5B;
+color: white;
+font-size: 14px;
+padding: 3px 7px;
+border-radius: 25px;
+margin: 2px 00px;
+}
+/* .t2{
+background-color: #2C042C;
+border: 3px solid #793E5B;
+color: white;
+font-size: 14px;
+padding: 0px 10px;
+border-radius: 25px;
+margin: 6px 9px;
 }
 
-.t1 a:hover , .t2 a:hover , .t3 a:hover , .t4 a:hover , .t5 a:hover , .t6 a:hover , .t7 a:hover , .t8 a:hover {
+.t2 a:hover{
+  top: auto;
+  text-align: right;
   color: rgb(255, 199, 0);
 }
 
-.t1, .t2, .t3, .t4, .t5, .t6, .t7, .t8 {
-  border: 2px solid #793E5B;
-  background-color: #2C042C;
+.t2 {
   border-radius: 10px;
   text-decoration: none;
-}
+} */
 
 .editprofile, a:visited, a:link, a:active
 {
@@ -207,8 +225,19 @@ margin: 2px 00px;
 }
 
 .logout{
-  top: auto;
-  text-align: right;
+background-color: #2C042C;
+border: 3px solid #793E5B;
+color: white;
+font-size: 14px;
+padding: 0px 10px;
+border-radius: 25px;
+margin: 6px 9px;
+}
+
+.logout{
+  position: absolute;
+  top: 0;
+  right: 0px;
 }
 
 .logout a:hover{
@@ -223,4 +252,8 @@ margin: 2px 00px;
   margin: 40px 600px;
   padding: -1px;
   border-radius: 25px;
+}
+
+.loginpath {
+
 }

@@ -6,6 +6,13 @@
 <h3>Description:</h3>
 <p><%= @planet.description %></p><br>
 
+<h3>Mission Crew Members</h3>
+<% @planet.colonists.each do |colonist| %>
+  <h3><%= link_to colonist.full_name, colonist, class: "colonistprofile" %></h3>
+<% end %>
+
+<br>
+
 <h3>Funding Goal</h3>
 <h4>$<%= number_with_delimiter(@planet.funding_goal, :delimiter => ',') %></h4>
 
@@ -18,12 +25,9 @@
 
 <h3>How Far Are We From Our Goal</h3>
 <h3>$<%= number_with_delimiter(@planet.funding_gap, :delimiter => ',') %></h3>
-<% if session[:sponsor_id] %>
-  <%= link_to "Donate", new_donation_path%>
+<% if session[:type] == "sponsor"%>
+  <%= link_to "Donate", new_donation_path, class: "colonistprofile"%>
 <% end %>
-
-<h3>Mission Crew Members</h3>
-<% @planet.colonists.each do |colonist| %>
-  <h3><%= link_to colonist.full_name, colonist, class: "colonistprofile" %></h3>
-<% end %>
+<br><br>
+<%= link_to "Go Back to Planet List", planets_path, class: "colonistprofile"%>
 </div>
