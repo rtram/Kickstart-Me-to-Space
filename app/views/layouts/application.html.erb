@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-<div class="topbar">
+<div id="topbar">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -35,7 +35,9 @@
   <body>
       <% if session[:id]%>
       <div class= "username"><h3><%= session[:first_name] %></h3></div>
+      <div id="rightout">
       <%= link_to "Logout", logout_path, method: "DELETE", class: "logout"%>
+    </div>
        <% else %>
        <%= link_to "Login", login_path%>
        <h3>Please Sign In</h3>
